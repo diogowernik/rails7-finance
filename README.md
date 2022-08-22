@@ -1,24 +1,17 @@
-# README
+## start
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+    git clone
+    cd app_folder
+    bundle
+    bin/rails db:migrate
+    bin/rails g madmin:install
+    bin/rails c
+    User.last.update(admin: true)
+    bin/rails g administrate:install
 
-Things you may want to cover:
 
-* Ruby version
+    bin/dev or bin/rails s
 
-* System dependencies
+Set hcaptcha keys
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## end

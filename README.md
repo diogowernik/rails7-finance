@@ -14,4 +14,9 @@
 
 Set hcaptcha keys
 
+.env
+
+    HCAPTCHA_SITE_KEY=
+    HCAPTCHA_SECRET_KEY=
+
 ## end

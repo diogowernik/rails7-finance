@@ -16,7 +16,9 @@
     <%= form.rich_text_area :body, class: 'form-control' %>
   </div>
 
-  <div data-controller="hcaptcha" data-sitekey="<%= Hcaptcha.sitekey %>" class="h-captcha"></div>
+  <%# <div data-controller="hcaptcha" data-sitekey=" %>
+  <%#= Hcaptcha.sitekey %>
+  <%# " class="h-captcha"></div> %>
 
   <div class="mb-3">
     <% if post.persisted? %>

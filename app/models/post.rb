@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  include ValidatesHcaptcha
+  # include ValidatesHcaptcha
 
   has_rich_text :body
 end

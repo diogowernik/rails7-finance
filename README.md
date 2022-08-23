@@ -22,12 +22,3 @@ Set hcaptcha keys
 ## change git url
 
     git remote set-url origin
-
-## scaffolds
-
-    rails g scaffold BrSock ticker:string price:decimal slug:string
-    rails g scaffold BrReit ticker:string price:decimal slug:string
-    rails g scaffold Stock ticker:string price:decimal slug:string
-    rails g scaffold Reit ticker:string price:decimal slug:string
-    rails g scaffold Currency ticker:string price:decimal slug:string
-    rails g scaffold Crypto ticker:string price:decimal slug:string

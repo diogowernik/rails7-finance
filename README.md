@@ -21,3 +21,14 @@ Set hcaptcha keys
 ## change git url
 
     git remote set-url origin
+
+## Scaffolds used for this project globalid
+
+    rails g scaffold BrStock ticker:string price:float
+    rails g scaffold BrReit ticker:string price:float
+
+    rails g scaffold Portfolio name:string
+
+    rails g scaffold Investment portfolio:references assigned_to:belongs_to{polymorphic}
+
+Than customized Investment model and form to work with globalid, created a helper.

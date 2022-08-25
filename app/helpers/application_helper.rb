@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def sgid_options_for_collection(collection, text_method: :name)
+  def sgid_options_for_collection(collection, text_method: :ticker)
     collection.map do |item|
       [
         text_method.respond_to?(:call) ? text_method.call(item) : item.public_send(text_method),

@@ -1,6 +1,10 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  resources :investments
+  resources :portfolios
+  resources :br_reits
+  resources :br_stocks
   # draw :madmin
   resources :posts
 

@@ -1,0 +1,2 @@
+class BrReit < ApplicationRecord
+end

@@ -1,0 +1,16 @@
+<div class="page-header">
+  <%= link_to investments_path, class: 'btn btn-default' do %>
+    All Investments
+  <% end %>
+  <%= link_to edit_investment_path(@investment), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show investment</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Portfolio:</dt>
+  <dd><%= @investment.portfolio %></dd>
+  <dt>Assigned to:</dt>
+  <dd><%= @investment.assigned_to %></dd>
+</dl>

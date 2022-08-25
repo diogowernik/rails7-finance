@@ -1,0 +1,34 @@
+<%= form_with(model: portfolio) do |form| %>
+  <% if portfolio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(portfolio.errors.count, "error") %> prohibited this portfolio from being saved:</h2>
+
+      <ul>
+      <% portfolio.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if portfolio.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', portfolio, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if portfolio.persisted? %>
+      <%= link_to "Cancel", portfolio, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", portfolios_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

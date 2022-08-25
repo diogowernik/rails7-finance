@@ -1,0 +1,16 @@
+<div class="page-header">
+  <%= link_to br_stocks_path, class: 'btn btn-default' do %>
+    All Br_stocks
+  <% end %>
+  <%= link_to edit_br_stock_path(@br_stock), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show br_stock</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Ticker:</dt>
+  <dd><%= @br_stock.ticker %></dd>
+  <dt>Price:</dt>
+  <dd><%= @br_stock.price %></dd>
+</dl>

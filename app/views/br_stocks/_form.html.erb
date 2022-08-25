@@ -1,0 +1,39 @@
+<%= form_with(model: br_stock) do |form| %>
+  <% if br_stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(br_stock.errors.count, "error") %> prohibited this br_stock from being saved:</h2>
+
+      <ul>
+      <% br_stock.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :ticker, class: 'form-label' %>
+      <%= form.text_field :ticker, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :price, class: 'form-label' %>
+      <%= form.text_field :price, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if br_stock.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', br_stock, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if br_stock.persisted? %>
+      <%= link_to "Cancel", br_stock, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", br_stocks_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

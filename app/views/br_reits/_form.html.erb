@@ -1,0 +1,39 @@
+<%= form_with(model: br_reit) do |form| %>
+  <% if br_reit.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(br_reit.errors.count, "error") %> prohibited this br_reit from being saved:</h2>
+
+      <ul>
+      <% br_reit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :ticker, class: 'form-label' %>
+      <%= form.text_field :ticker, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :price, class: 'form-label' %>
+      <%= form.text_field :price, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <% if br_reit.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', br_reit, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if br_reit.persisted? %>
+      <%= link_to "Cancel", br_reit, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", br_reits_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

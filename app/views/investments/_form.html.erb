@@ -1,0 +1,42 @@
+<%= form_with(model: investment) do |form| %>
+  <% if investment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(investment.errors.count, "error") %> prohibited this investment from being saved:</h2>
+
+      <ul>
+      <% investment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :portfolio_id, class: 'form-label' %>
+      <%= form.select :portfolio_id, Portfolio.all.map { |p| [p.name, p.id] }, {}, class: 'form-control' %>
+    </div>
+
+  <div class="mb-3">
+    <%= form.label :assigned_to_sgid, style: "display: block" %>
+    <%= form.select :assigned_to_sgid, grouped_options_for_select({
+      "BrStocks" => sgid_options_for_collection(BrStock.all),
+      "BrReits" => sgid_options_for_collection(BrReit.all),
+    }) %>
+    </div>
+
+  <div class="mb-3">
+    <% if investment.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', investment, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if investment.persisted? %>
+      <%= link_to "Cancel", investment, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", investments_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>
